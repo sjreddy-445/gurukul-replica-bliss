@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Locations", href: "#locations" },
-    { name: "Blogs", href: "#blogs" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Locations", href: "/locations" },
+    { name: "Blogs", href: "/blogs" },
   ];
 
   return (
@@ -33,13 +35,15 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                to={item.href}
+                className={`text-foreground hover:text-primary transition-colors duration-300 font-medium ${
+                  location.pathname === item.href ? 'text-primary' : ''
+                }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -65,14 +69,16 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+                  to={item.href}
+                  className={`text-foreground hover:text-primary transition-colors duration-300 font-medium py-2 ${
+                    location.pathname === item.href ? 'text-primary' : ''
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

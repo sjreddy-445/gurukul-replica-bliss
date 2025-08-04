@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import GurukulsSection from "@/components/GurukulsSection";
-import Footer from "@/components/Footer";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import GurudevSection from "@/components/GurudevSection";
+import BlogsPreview from "@/components/BlogsPreview";
 
 const Index = () => {
   useEffect(() => {
@@ -34,13 +35,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <GurukulsSection />
-      </main>
-      <Footer />
+      <HeroSection />
+      <AboutSection />
+      <GurukulsSection />
+      <GurudevSection />
+      <BlogsPreview />
+      <TestimonialsSection />
     </div>
   );
 };
