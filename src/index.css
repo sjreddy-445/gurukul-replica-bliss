@@ -2,95 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Sri Sri Gurukul Design System - Spiritual & Traditional Indian Theme 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Colors - Spiritual Theme */
+    --background: 43 38% 98%;
+    --foreground: 20 15% 25%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 15% 25%;
 
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 20 15% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Saffron Orange (Sacred Color) */
+    --primary: 35 84% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 35 84% 68%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm Earth Tones */
+    --secondary: 43 38% 96%;
+    --secondary-foreground: 20 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Warm Neutrals */
+    --muted: 43 20% 94%;
+    --muted-foreground: 20 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Sacred Colors */
+    --accent: 35 84% 95%;
+    --accent-foreground: 35 84% 40%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 43 20% 88%;
+    --input: 43 20% 96%;
+    --ring: 35 84% 58%;
 
-    --radius: 0.5rem;
+    /* Design System Values */
+    --radius: 0.75rem;
+    
+    /* Sacred Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-sacred: linear-gradient(180deg, hsl(43 38% 98%), hsl(43 38% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 84% 58% / 0.9), hsl(35 84% 48% / 0.7));
+    
+    /* Sacred Shadows */
+    --shadow-sacred: 0 8px 32px hsl(35 84% 58% / 0.12);
+    --shadow-elegant: 0 4px 24px hsl(20 15% 25% / 0.08);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    
+    /* Transitions */
+    --transition-sacred: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease-out;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Typography Scale */
+    --font-sacred: 'Crimson Text', serif;
+    --font-elegant: 'Inter', sans-serif;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Warm & Spiritual */
+    --background: 20 15% 12%;
+    --foreground: 43 38% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 15% 15%;
+    --card-foreground: 43 38% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 15% 15%;
+    --popover-foreground: 43 38% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 35 84% 65%;
+    --primary-foreground: 20 15% 12%;
+    --primary-glow: 35 84% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 43 38% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 20 15% 18%;
+    --muted-foreground: 43 20% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 35 84% 20%;
+    --accent-foreground: 35 84% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 20 15% 22%;
+    --input: 20 15% 18%;
+    --ring: 35 84% 65%;
+    
+    /* Dark Mode Gradients */
+    --gradient-sacred: linear-gradient(180deg, hsl(20 15% 15%), hsl(20 15% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(35 84% 65% / 0.9), hsl(35 84% 55% / 0.7));
+    --shadow-sacred: 0 8px 32px hsl(35 84% 65% / 0.15);
   }
 }
 
@@ -100,6 +112,61 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-elegant;
+    font-family: var(--font-elegant);
+  }
+  
+  /* Sacred Typography */
+  .font-sacred {
+    font-family: var(--font-sacred);
+  }
+  
+  .font-elegant {
+    font-family: var(--font-elegant);
+  }
+}
+
+@layer components {
+  /* Sacred Button Styles */
+  .btn-sacred {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
+    @apply shadow-sacred hover:shadow-glow;
+    @apply transition-all duration-300 transform hover:scale-105;
+  }
+  
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Sacred Card */
+  .card-sacred {
+    @apply bg-card border border-border rounded-lg;
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-sacred);
+  }
+  
+  .card-sacred:hover {
+    box-shadow: var(--shadow-sacred);
+    transform: translateY(-4px);
+  }
+  
+  /* Smooth Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
